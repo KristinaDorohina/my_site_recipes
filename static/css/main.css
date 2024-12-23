@@ -1,3 +1,18 @@
 body {
     background-color: gray;
 }
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #000000;
+}
+
+.header__img {
+    height: 64px;
+    width: 64px;
+}
+
+/* FOOTER */
