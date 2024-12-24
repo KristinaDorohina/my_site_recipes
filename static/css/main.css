@@ -1,6 +1,19 @@
 body {
     background-color: gray;
+    margin: 0;
 }
+
+*;
+*:before
+*:after {
+    box-sizing: border-box;
+}
+
+header, footer {
+    padding: 20px;
+    background-color: #989898;
+}
+
 /* HEADER */
 
 header {
@@ -8,6 +21,20 @@ header {
     top: 0;
     z-index: 1000;
     background: #000000;
+}
+
+.page {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    max-width: 100vh;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex: 1 1 auto;
 }
 
 .header__img {
