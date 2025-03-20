@@ -16,34 +16,140 @@ header, footer {
 
 /* HEADER */
 
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: #000000;
+/* Общие стили для шапки */
+.header {
+    position: fixed; /* Фиксированная позиция */
+    top: 0; /* Прижимаем к верхнему краю */
+    left: 0;
+    width: 100%; /* Ширина на весь экран */
+    z-index: 1000; /* Убедимся, что шапка поверх других элементов */
+    background-color: #343a40; /* Темный фон */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+    padding: 10px 20px; /* Отступы внутри шапки */
 }
 
-.page {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.content {
-    max-width: 100vh;
-    margin: 0 auto;
-    padding: 40px 20px;
-    flex: 1 1 auto;
-}
-
+/* Стили для логотипа */
 .header__img {
-    height: 64px;
-    width: 64px;
+    height: 40px; /* Высота логотипа */
+    margin-right: 10px; /* Отступ справа */
+}
+
+/* Стили для навигации */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: white !important; /* Белый цвет текста */
+    margin: 0 10px; /* Отступы между ссылками */
+    transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+.nav-link:hover {
+    color: #ffc107 !important; /* Желтый цвет при наведении */
+}
+
+/* Стили для формы поиска */
+.form-control {
+    background-color: #495057; /* Темный фон для поиска */
+    border: none; /* Убираем границу */
+    color: white; /* Белый текст */
+}
+
+.form-control::placeholder {
+    color: #adb5bd; /* Серый цвет плейсхолдера */
+}
+
+/* Стили для кнопки "Добавить Рецепт" */
+.btn-warning {
+    background-color: #ffc107; /* Желтый цвет */
+    border: none; /* Убираем границу */
+    color: #343a40; /* Темный текст */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета */
+}
+
+.btn-warning:hover {
+    background-color: #e0a800; /* Темно-желтый при наведении */
 }
 
 /* FOOTER */
+footer {
+    position: fixed; /* Фиксированная позиция */
+    left: 0;
+    width: 100%; /* Ширина на весь экран */
+    z-index: 1000; /* Убедимся, что шапка поверх других элементов */
+    background-color: #343a40; /* Темный фон */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+    text-align: down;
+    padding: 10px 0;
+}
+
+
 .footer__img {
     height: 36px;
     width: 36px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.registration-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+.registration-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+.registration-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"] {
+    width: 89%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.registration-form input[type="submit"] {
+    width: 97%;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+.registration-form input[type="submit"]:hover {
+    background-color: #218838;
+}
+.registration-form p {
+    text-align: center;
+    margin-top: 15px;
+}
+.registration-form a {
+    color: #007bff;
+    text-decoration: none;
+}
+.registration-form a:hover {
+    text-decoration: underline;
 }

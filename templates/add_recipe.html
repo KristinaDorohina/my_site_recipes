@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Добавить рецепт</h1>
+  <form method="POST" action="{{ url_for('add_recipe') }}" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.title.label }}<br>
+      {{ form.title(class="form-control") }}<br>
+      <small class="form-text text-muted">Введите название блюда с большой буквы, точка в конце не ставится</small>
+      {% for error in form.title.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      {{ form.photo.label }}<br>
+      {{ form.photo(class="form-control") }}<br>
+      <small class="form-text text-muted">Загрузите одно фото готового блюда</small>
+      {% for error in form.photo.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      {{ form.description.label }}<br>
+      {{ form.description(class="form-control") }}<br>
+      <small class="form-text text-muted">Пара предложений, которые характеризуют ваше блюдо</small>
+      {% for error in form.description.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      {{ form.ingredients.label }}<br>
+      {{ form.ingredients(class="form-control") }}<br>
+      <small class="form-text text-muted">Каждый ингредиент вводите с новой строки и обязательно в таком порядке: название ингредиента - количество</small>
+      {% for error in form.ingredients.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      {{ form.instructions.label }}<br>
+      {{ form.instructions(class="form-control") }}<br>
+      <small class="form-text text-muted">Опишите пошагово процесс приготовления блюда</small>
+      {% for error in form.instructions.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      {{ form.dish_types.label }}<br>
+      {{ form.dish_types(class="form-control") }}<br>
+      <small class="form-text text-muted">Выберите типы блюд</small>
+      {% for error in form.dish_types.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      {{ form.submit(class="btn btn-primary") }}
+    </div>
+  </form>
+{% endblock %}
