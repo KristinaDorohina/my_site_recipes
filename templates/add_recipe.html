@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
+{% if not current_user.is_authenticated %}
+    <div class="alert alert-warning">
+        Чтобы добавить рецепт, пожалуйста <a href="{{ url_for('login') }}">войдите</a>
+        или <a href="{{ url_for('registration') }}">зарегистрируйтесь</a>.
+    </div>
+{% endif %}
   <h1>Добавить рецепт</h1>
   <form method="POST" action="{{ url_for('add_recipe') }}" enctype="multipart/form-data">
     {{ form.hidden_tag() }}
